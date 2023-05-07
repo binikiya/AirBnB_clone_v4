@@ -3,7 +3,7 @@ document.ready(function () {
   const api = 'http://' + window.location.hostname;
   
 	let states = {};
-  $('.locations > UL > H2 > INPUT[type="checkbox"]').change(function () {
+  $('.locations > ul > h2 > INPUT[type="checkbox"]').change(function () {
     if ($(this).is(':checked')) {
       states[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
@@ -11,9 +11,9 @@ document.ready(function () {
     }
     const locations = Object.assign({}, states, cities);
     if (Object.values(locations).length === 0) {
-      $('.locations H4').html('&nbsp;');
+      $('.locations h4').html('&nbsp;');
     } else {
-      $('.locations H4').text(Object.values(locations).join(', '));
+      $('.locations h4').text(Object.values(locations).join(', '));
     }
   });
 
